@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+        <header id="scroll" class="image">
+                <nav>
+                    
+                    <img style="width:50px; border-radius:50%"src="https://ih1.redbubble.net/image.214666013.2675/flat,800x800,070,f.u1.jpg" alt="">
+                    <li><h1><a href="/">Hi there:)</a></h1></li>
+                    <li><h1><a href="/destination">Destinations</a></h1></li>
+                    <li><h1><a href="/subscribe">Subscribe</a></h1></li>
+                </nav>
+        </header>
+        <div class="content">
+            <div id="main" class="hover">
+                    <h2>Welcome to DestiNation</h2>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        It has survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+            </div>
+            <div class="hover text">
+                        <h2>Look Around</h2>
+                    <p>
+                        An enormous World around you, but where to start first right?
+                        Well.. Luckily for you, we have an 'definitive behavioural' test which helps
+                        to determine which country, region, city or island would suit you perfectly.
+                        Cool right!?
+                        Once you sign up , you can request a DB-Test via our weekly news letter:)
+                    </p>
+                    <p><b>
+                        Below is a gallery of pre-visited destinations that some of our clients have been to
+                    </b></p>
+            </div>
+            <div class="image-box row">
+                <img class="gallery" src="https://images.pexels.com/photos/6934/beach-vacation-water-summer.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <img class="gallery" src="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <img class="gallery" src="https://images.pexels.com/photos/417083/pexels-photo-417083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <img class="gallery" src="https://images.pexels.com/photos/104750/pexels-photo-104750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <img class="gallery" src="https://images.pexels.com/photos/68672/beach-beverage-caribbean-cocktail-68672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <img class="gallery" src="https://cdn.pixabay.com/photo/2018/03/12/20/07/maldives-3220702__340.jpg" alt="">
+                <img class="gallery" src="https://cdn.pixabay.com/photo/2018/05/10/19/36/the-atlantic-ocean-3388522__340.jpg" alt="">
+                <img class="gallery" src="https://cdn.pixabay.com/photo/2018/05/07/17/50/australia-3381295__340.jpg" alt="">
+            </div>
+                <div>
+                    <a style="border:#0d6f8f 1em solid; border-radius:15px" id="scroll" href="#scroll">🔝</a>
+                </div>
+                        <footer>© 2018 Destination | the Destination of your Dreams</footer>
+        </div>
+    <!-- </div> -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+<script>
+  $(document).ready(function(){
+      //the native smooth scroll
+      document.querySelectorAll('a[href^="#scroll"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+  });
+</script>
+</html>
+

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body{
+            background-image:url(https://github.com/AshLaw1137/myImages/blob/master/darkWall.jpg?raw=true);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img style="width:50px; border-radius:50%"src="https://ih1.redbubble.net/image.214666013.2675/flat,800x800,070,f.u1.jpg" alt=""><h1><a style="margin-left:2em; margin-right:2em" href="/">Hi there:)</a></h1>
+            <h1><a href="/destination">Destinations</a></h1>
+            <h1><a href="/subscribe">Subscribe</a></h1>
+        </nav>
+    </header>
+    <div>
+        <form id="form" action="http://localhost:3000/subscriber" method="post">
+            <div style="margin-top:7em">
+                <h2><span>Subscribe</span></h2>                
+                <h1>To get the latest up-to-date info on travel and travel-pricing</h1>
+            </div>
+            <input id="first_name" name="first_name" type="text" onfocus="this.value=''" value="First Name">
+            <input id="last_name" name="surname" type="text" onfocus="this.value=''" value="Last Name">
+            <input id="email" name="email" type="text" onfocus="this.value=''" value="Email Adress">
+
+            <button id="submit" type="submit">Submit?</button>
+        </form>
+    </div>
+    <footer style="margin-top:9.6em">© 2018 Destination | the Destination of your Dreams</footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+<script>
+
+</script>
+</html>
