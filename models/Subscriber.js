@@ -6,5 +6,5 @@ var SubscribeSchema = new Schema({
     last_name: String,
     email: String
 });
-
-module.exports = mongoose.model('Subscriber', SubscribeSchema);
+var Subscriber = mongoose.model('Subscriber', SubscribeSchema);
+module.exports = Subscriber 
