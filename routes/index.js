@@ -5,6 +5,9 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Subscribe = require('../models/Subscriber');
+var Upload = require('../models/Upload');
+
+var path = require('path');
 
 mongoose.connect('mongodb://ashlaw11:wolfsbane11@ds137650.mlab.com:37650/destination');
 mongoose.connection.on('connected', function(){
@@ -21,17 +24,17 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET destinations page */
-router.get('/destination', function(req, res){
+router.get('/destination', function(req, res, next){
   res.render('destination', {title: 'DestiNation: Places'});
 });
 
 /* GET subscribe page */
-router.get('/subscribe', function(req, res){
+router.get('/subscribe', function(req, res, next){
   res.render('subscribe', {title: 'DN: Subscribe'});
 });
 
 //subscribing
-router.post('/subscriber', function(req, res){
+router.post('/subscriber', function(req, res, next){
 
   var subscriber = new Subscribe();
   subscriber.first_name = req.body.first_name;
@@ -45,18 +48,41 @@ router.post('/subscriber', function(req, res){
   res.redirect('/subscribe');
 });
 
+/* GET uploads page */
+router.get('/upload', function(req, res, next){
+  res.render('upload', {title: 'Upload'});
+});
+
+/* uploading */
+router.post('/uploads', function(req, res, next){
+  console.log('Uploading file..');
+
+  if(req.files){
+    let imageUp = req.files.imageUp;
+    // res.send(imageUp.name);
+    imageUp.mv('./public/images/'+imageUp.name, function(err){
+      if (err)
+        return res.status(500).send(err);
+
+        console.log(imageUp);
+          console.log('FILE UPLOADED');
+    });
+  }
+
+  res.redirect('/upload');
+});
 /* GET Thailand article page */
-router.get('/dest-thailand', function(req, res){
+router.get('/dest-thailand', function(req, res, next){
   res.render('dest-thailand', {title: 'Thailand'});
 });
 
 /* GET Tahiti article page */
-router.get('/dest-tahiti', function(req, res){
+router.get('/dest-tahiti', function(req, res, next){
   res.render('dest-tahiti', {title: 'Tahiti'});
 });
 
 /* GET St Lucia article page */
-router.get('/dest-lucia', function(req, res){
+router.get('/dest-lucia', function(req, res, next){
   res.render('dest-lucia', {title: 'St Lucia'});
 });
 

@@ -93,7 +93,7 @@ p{
 }
 .hover{
   /* background-color:rgb(40, 207, 199); */
-  background-image: url(https://images.unsplash.com/photo-1497968021412-a86898ccbc4a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=90b6703869dd7a2bbe4175ba166de99a&auto=format&fit=crop&w=968&q=80);
+  background-image: url(https://images.unsplash.com/photo-1495012379376-194a416fcc5f?ixlib=rb-0.3.5&s=9330a7f211cd366810afc53e3ad5fea0&auto=format&fit=crop&w=1334&q=80);
   color:whitesmoke;
   border-radius:15px;
   border-bottom-left-radius: 0px;
@@ -207,6 +207,17 @@ input:hover{
 }
 #submit:hover{
   color:lightseagreen;
+}
+.map{
+  border-radius:50%;
+  margin-left:auto;
+  margin-top:1em;
+  margin-top:1em;
+  margin-right:auto;
+}
+.mapBox{
+  background-color:black;
+  width:100%;
 }
 
 @media (max-width: 915px){

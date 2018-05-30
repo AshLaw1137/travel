@@ -10,6 +10,9 @@
         body{
             background-image:url(https://github.com/AshLaw1137/myImages/blob/master/darkWall.jpg?raw=true);
         }
+        #form{
+            background-image: url(https://hdwallsource.com/img/2014/10/space-wallpaper-26551-27243-hd-wallpapers.jpg);
+        }
     </style>
 </head>
 <body>
@@ -22,14 +25,14 @@
         </nav>
     </header>
     <div>
-        <form id="form" action="http://localhost:3000/subscriber" method="post">
+        <form id="form" action"http://localhost:3000/uploads" method="post">
             <div style="margin-top:7em">
-                <h2><span>Subscribe</span></h2>                
-                <h1>To get the latest up-to-date info on travel and travel-pricing</h1>
+                <h2><span>Upload your desired destination</span></h2>                
+                <h1>Choose a photo to upload, and a caption/quote for your image</h1>
+                
+                <input style="width:12%; border:black 2px solid" id="imageUp" type="file" name="imageUp">
             </div>
-            <input id="first_name" name="first_name" type="text" onfocus="this.value=''" value="First Name">
-            <input id="last_name" name="surname" type="text" onfocus="this.value=''" value="Last Name">
-            <input id="email" name="email" type="text" onfocus="this.value=''" value="Email Adress">
+            
 
             <button id="submit" type="submit">Submit?</button>
         </form>
