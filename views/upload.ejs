@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body{
+            background-image:url(https://github.com/AshLaw1137/myImages/blob/master/darkWall.jpg?raw=true);
+        }
+        #form{
+            background-image: url(https://hdwallsource.com/img/2014/10/space-wallpaper-26551-27243-hd-wallpapers.jpg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img style="width:50px; border-radius:50%"src="https://ih1.redbubble.net/image.214666013.2675/flat,800x800,070,f.u1.jpg" alt=""><h1><a style="margin-left:2em; margin-right:2em" href="/">Hi there:)</a></h1>
+            <h1><a href="/destination">Destinations</a></h1>
+            <h1><a href="/subscribe">Subscribe</a></h1></li>
+            <li><h1><a href="/upload">Upload</a></h1></li>
+        </nav>
+    </header>
+    <div>
+        <form id="form" action"http://localhost:3000/uploads" method="post">
+            <div style="margin-top:7em">
+                <h2><span>Upload your desired destination</span></h2>                
+                <h1>Choose a photo to upload, and a caption/quote for your image</h1>
+                
+                <input style="width:12%; border:black 2px solid" id="imageUp" type="file" name="imageUp">
+            </div>
+            
+
+            <button id="submit" type="submit">Submit?</button>
+        </form>
+    </div>
+    <footer style="margin-top:9.6em">© 2018 Destination | the Destination of your Dreams</footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+<script>
+
+</script>
+</html>
