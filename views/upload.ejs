@@ -25,15 +25,12 @@
         </nav>
     </header>
     <div>
-        <form id="form" action"http://localhost:3000/uploads" method="post">
+        <form id="form" enctype="multipart/form-data" action"http://localhost:3000/upload" method="post">
             <div style="margin-top:7em">
                 <h2><span>Upload your desired destination</span></h2>                
                 <h1>Choose a photo to upload, and a caption/quote for your image</h1>
-                
-                <input style="width:12%; border:black 2px solid" id="imageUp" type="file" name="imageUp">
+                <input style="width:12%; border:black 2px solid" id="uploaded_image" type="file" name="uploaded_image">
             </div>
-            
-
             <button id="submit" type="submit">Submit?</button>
         </form>
     </div>
