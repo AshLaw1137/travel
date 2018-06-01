@@ -4,8 +4,15 @@ body{
   /* background-image: url(https://cdn.pixabay.com/photo/2016/05/21/19/06/heart-1407248__340.jpg); */
   background-color: whitesmoke;
   color:whitesmoke;
-  margin:0;
-  padding:0;
+  /* margin:0; */
+  /* padding:0; */
+  margin-left:auto;
+  margin-right:auto;
+}
+div{
+  width:100%;
+  height:auto;
+  position:static;
 }
 h1, footer{
   font-weight:lighter;
@@ -222,7 +229,19 @@ input:hover{
   width:100%;
   opacity: 0.7;
 }
-
-@media (max-width: 915px){
-  
+.divide{
+  background-image:url(https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c8df2caeb47cf27eae792735019e072f&auto=format&fit=crop&w=1350&q=80);
+  width:100%;
+  margin-top:7em;
+  height:500px;
+}
+#load{
+  background-image:url(https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-0.3.5&s=400fa08e5a6fef0e64cfd93bd80f9d2f&auto=format&fit=crop&w=1350&q=80);
+  width:max-content;
+  height:max-content;
+  padding:1em;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
