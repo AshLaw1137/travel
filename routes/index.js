@@ -52,9 +52,9 @@ router.get('/upload', function(req, res, next){
   res.render('upload', {title: 'Upload'});
 });
 
-/* uploading */
+/* UPLOADING */
 router.post('/upload', function(req, res, next){
-    console.log(req.file);
+    console.log(req.files.name);
     if (req.files){
       let uploaded_image = req.files.uploaded_image;
       uploaded_image.mv('./public/images/'+uploaded_image.name, function(err){
@@ -64,25 +64,29 @@ router.post('/upload', function(req, res, next){
             console.log('File Uploaded');
         });
     }
+    var new_upload = new Upload();
+    new_upload.img_url = req.files.name;
+    new_upload.email = req.body.email;
+    new_upload.quote = req.body.quote;
+
+    new_upload.save(function (err){
+      if(err)
+          res.send(err);
+    });
     res.redirect('/upload');
 });
 
-// router.post('/uploads', function(req, res, next){
-//   console.log('Uploading');
+/* GETTING AND DISPLAYING THE UPLOADS */ 
+router.get('/display', function(req, res, next){
 
-//   if(req.files){
-//     let imageUp = req.files.uploaded_image;
-//     // res.send(uploaded_image.name);
-//     uploaded_image.mv('./public/images/'+uploaded_image.name, function(err){
-//       if (err)
-//         return res.status(500).send(err);
 
-//         console.log(uploaded_image);
-//           console.log('FILE UPLOADED');
-//     });
-//   }
+  Upload.find({}, function (err, new_upload){
+    if (err) throw err;
 
-//   res.send('Uploaded');
-// });
+    console.log(new_upload);
+
+  });
+  res.render('display', {title: 'DisplayUploads',});
+});
 
 module.exports = router;
