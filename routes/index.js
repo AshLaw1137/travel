@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Subscribe = require('../models/Subscriber');
 var Upload = require('../models/Upload');
-
 var path = require('path');
 
 mongoose.connect('mongodb://ashlaw11:wolfsbane11@ds137650.mlab.com:37650/destination');
@@ -53,54 +52,41 @@ router.get('/upload', function(req, res, next){
   res.render('upload', {title: 'Upload'});
 });
 
-/* uploading */
-router.post('/uploads', function(req, res, next){
-  console.log('Uploading file..');
-
-  if(req.files){
-    let imageUp = req.files.imageUp;
-    // res.send(imageUp.name);
-    imageUp.mv('./public/images/'+imageUp.name, function(err){
-      if (err)
-        return res.status(500).send(err);
-
-        console.log(imageUp);
-          console.log('FILE UPLOADED');
+/* UPLOADING */
+router.post('/upload', function(req, res, next){
+    console.log(req.files.name);
+    if (req.files){
+      let uploaded_image = req.files.uploaded_image;
+      uploaded_image.mv('./public/images/'+uploaded_image.name, function(err){
+            if (err)
+              return res.status(500).send(err);
+              
+            console.log('File Uploaded');
+        });
+    }
+    var new_upload = new Upload();
+    new_upload.img_url = req.files.name;
+    new_upload.email = req.body.email;
+    new_upload.quote = req.body.quote;
+ 
+     new_upload.save(function (err){
+      if(err)
+          res.send(err);
     });
-  }
-
-  res.redirect('/upload');
-});
-/* GET Thailand article page */
-router.get('/dest-thailand', function(req, res, next){
-  res.render('dest-thailand', {title: 'Thailand'});
+    res.redirect('/upload');
 });
 
-/* GET Tahiti article page */
-router.get('/dest-tahiti', function(req, res, next){
-  res.render('dest-tahiti', {title: 'Tahiti'});
+/* GETTING AND DISPLAYING THE UPLOADS */ 
+router.get('/display', function(req, res, next){
+
+
+  Upload.find({}, function (err, new_upload){
+    if (err) throw err;
+
+    console.log(new_upload);
+
+  });
+  res.render('display', {title: 'DisplayUploads',});
 });
 
-/* GET St Lucia article page */
-router.get('/dest-lucia', function(req, res, next){
-  res.render('dest-lucia', {title: 'St Lucia'});
-});
-
-// router.post('/upload', function(req, res, next){
-//   console.log('Uploading');
-
-//   if(req.files){
-//     let imageUp = req.files.imageUp;
-//     // res.send(imageUp.name);
-//     imageUp.mv('./public/images/'+imageUp.name, function(err){
-//       if (err)
-//         return res.status(500).send(err);
-
-//         console.log(imageUp);
-//           console.log('FILE UPLOADED');
-//     });
-//   }
-
-//   res.send('Uploaded');
-// });
 module.exports = router;
